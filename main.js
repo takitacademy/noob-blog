@@ -1,4 +1,4 @@
-
+let data
 
 const getPost = async () =>{
 
@@ -7,7 +7,7 @@ const getPost = async () =>{
     console.log(data)
 
     let html = "";
-    data.filter(val => val.id<= 12).forEach( post => {
+    data.filter(val => val.id <= 12).forEach( post => {
         html +=`
         <a href="post.html" class="post">
             <img src="img/a.jpg" alt="post">
@@ -21,38 +21,15 @@ const getPost = async () =>{
 } 
 getPost();
 
-const postDisplay = async () =>{
-    const res = await fetch('https://jsonplaceholder.typicode.com/posts?userId=1');
-    const result = await res.json();
-    console.log(result) 
-
-    let html1 = "";
-    result.forEach(val => {
-        html1 += `
-        <div id="blogPost" class="blog-details">
-            <img src="img/d.jpg" alt="image">
-            <h3>${val.title}</h3>
-            <p>${val.body}</p>
-        </div>`;
-    });
+const viewPost = (id) => {
+    //get post by id
+    let currentPost = data.filter((post) => post.id) [0];
     
-    document.getElementById("blogPost").innerHTML = html1;
-}
-postDisplay() 
+    //save the post with localstorage
+    localStorage.setItem("currentPost", JSON.stringify(currentPost));
+    
+    //redirect to the post
+    window.location.href = `${location.pathname}post.html`;
 
-const comments = async () => {
-    const resp = await fetch('https://jsonplaceholder.typicode.com/posts/1/comments');
-    const resul = await resp.json();
-    console.log(resul);
-
-    let html2 = "";
-    resul.forEach(valu => {
-        html2 += `
-        <div class="blog-details">
-            <h3>${valu.name}</h3>
-            <p>${valu.body}</p>
-        </div>`;
-    });
-    document.getElementById('comments').innerHTML = html2
+    console.log(currentPost)
 }
-comments();
