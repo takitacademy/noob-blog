@@ -1,4 +1,5 @@
 let data
+
 const getPost = async () =>{
 
     const response = await fetch("./posts.JSON");

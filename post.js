@@ -34,3 +34,21 @@ const postDisplay = async () => {
     document.getElementById("blogPost").innerHTML = html1;
 }
 postDisplay()
+
+/*const postDisplay = async () => {
+    // retrieve the current post from localstorage
+    let post = JSON.parse(localStorage.getItem("currentPost"))
+    // fetch comments by post id
+    await comments(post.id)
+    let html1 = "";
+    html1 += `
+        <div id="blogPost" class="blog-details">
+            <img src="img/d.jpg" alt="image">
+            <h3>${post.title}</h3>
+            <p>${post.body}</p>
+        </div>`;
+
+    document.getElementById("blogPost").innerHTML = html1;
+}
+postDisplay()
+*/
