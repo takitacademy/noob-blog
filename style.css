@@ -117,11 +117,12 @@ nav{
     padding: 5px 10px;
     border: 1px solid #1f1f11;
     width: 30%;
-    margin: 3rem auto;
+    margin:1rem auto;
     color: #1f1f11;
     font-size: 14px;
     text-decoration: none;
     position: relative;
+    cursor: pointer;
 }
 .blog-details{
     width: 60%;
