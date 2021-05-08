@@ -91,6 +91,7 @@ nav{
     transition: all 500ms ease-in;
     text-decoration: none;
     color: #1f1f11;
+    padding-bottom: 1rem;
 
     overflow: hidden;
 }

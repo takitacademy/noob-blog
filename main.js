@@ -5,14 +5,21 @@ const getPost = async () =>{
     const response = await fetch("./posts.JSON");
     const data = await response.json();
 
+
     let html = "";
     data.filter(post => post.id <= 12).forEach( post => {
+        
+        //DISPLAYING 20 CHARACTERS OF A POST BODY
+        let body = post.body;
+        body = body.substring(0, 20);
+        console.log(body);
+
         html +=`
         <div class="post">
             <img src="img/a.jpg" alt="post">
             <p style = "font-style:italic">Maret 01, 2021</p>
             <h3>${post.title}</h3>
-            <p>${post.body}</p>
+            <p>${body}</p>
         </div>
         `;
         document.getElementById('getRequest').innerHTML = html;

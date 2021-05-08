@@ -19,9 +19,8 @@ const postDisplay = async () => {
     //retrieve the current post from local storage
     retrieved = localStorage.getItem('currentPost');
     post = JSON.parse(retrieved);
-    console.log(post)
+    console.log(post);
 
-    //fetch comments by post id
     let html1 = "";
     html1 += `
     <div id="blogPost" class="blog-details">
@@ -34,6 +33,8 @@ const postDisplay = async () => {
     document.getElementById("blogPost").innerHTML = html1;
 }
 postDisplay()
+
+
 
 /*const postDisplay = async () => {
     // retrieve the current post from localstorage
